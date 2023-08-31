@@ -4,7 +4,7 @@
     pkgs = import nixpkgs { system = "x86_64-linux";};
     eachSystem = nixpkgs.lib.genAttrs (import systems);
     jsonConfig = modules: pkgs.writeScriptBin "print-config" ''
-      echo '${(builtins.toJSON (pkgs.lib.evalModules { modules = import modules pkgs; }).config)}'
+      echo '${(builtins.toJSON (pkgs.lib.evalModules { modules = import modules pkgs; }).config)}' | ${pkgs.jq}/bin/jq
     '';
   in {
     packages = eachSystem (system: rec {
