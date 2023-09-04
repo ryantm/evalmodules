@@ -17,7 +17,7 @@
       printConfig = pkgs: modules: modulesConfig: pkgs.writeScriptBin
         "print-config-${(builtins.parseDrvName modulesConfig.name).name}" ''
         echo "Module input:"
-        ${pkgs.bat}/bin/bat --language=nix ${modules}
+        ${pkgs.bat}/bin/bat --theme=ansi --language=nix ${modules}
         echo
         echo "Config output:"
         ${pkgs.jq}/bin/jq < ${modulesConfig}
@@ -67,6 +67,10 @@
           docker4-load-and-run = pkgs.writeScriptBin "docker-load-and-run" ''
             ${pkgs.docker}/bin/docker run $(${pkgs.docker}/bin/docker load -q < ${docker4} | cut -d' ' -f3)
           '';
+
+          module5 = moduleConfig pkgs ./example5.nix "example5";
+          closure5 = printClosure pkgs module5;
+          example5 = printConfig pkgs ./example5.nix module5;
         });
     };
 }
