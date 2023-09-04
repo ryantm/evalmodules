@@ -5,7 +5,7 @@ pkgs:
   { _module.args.pkgs = pkgs; }
 
   (
-    {lib,pkgs,...} : with lib; let
+    { lib, pkgs, ... }: with lib; let
       languageServerModule = { name, config, ... }: {
         options.name = mkOption { type = types.str; };
         options.start = mkOption { type = types.str; };

@@ -4,14 +4,10 @@ pkgs:
 
   { _module.args.pkgs = pkgs; }
 
-  ({lib,pkgs,...} : with lib; {
+  ({ lib, pkgs, ... }: with lib; {
     options.lsp = {
-      name = mkOption {
-        type = types.str;
-      };
-      start = mkOption {
-        type = types.str;
-      };
+      name = mkOption { type = types.str; };
+      start = mkOption { type = types.str; };
     };
     config = {
       lsp.name = "go lsp";
