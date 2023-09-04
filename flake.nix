@@ -19,7 +19,7 @@
         echo "Module input:"
         ${pkgs.bat}/bin/bat --language=nix ${modules}
         echo
-        echo "Config:"
+        echo "Config output:"
         ${pkgs.jq}/bin/jq < ${modulesConfig}
         echo
         echo "Closure:"
