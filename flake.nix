@@ -17,7 +17,7 @@
       printConfig = pkgs: modules: modulesConfig: pkgs.writeScriptBin
         "print-config-${(builtins.parseDrvName modulesConfig.name).name}" ''
         echo "Module input:"
-        cat ${modules}
+        ${pkgs.bat}/bin/bat --language=nix ${modules}
         echo
         echo "Config:"
         ${pkgs.jq}/bin/jq < ${modulesConfig}
