@@ -1,6 +1,18 @@
 This is a collection of examples of using Nixpkgs lib.evalModules. It
 was used in a talk "Declaring an IDE with evalModules"
 
+## Slides
+
+The slides from the presentation are here:
+
+https://docs.google.com/presentation/d/1f3Nq9FvSPT8q-NtOtqAN2nsXSEP19Zck7943_yH9Q_s/edit?usp=sharing
+
+## Video
+
+The video of the presentation is here:
+
+https://www.youtube.com/watch?v=WsU7sQvIh0U
+
 ## Usage
 
 Run examples like
