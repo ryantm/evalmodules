@@ -1,3 +1,4 @@
+# Using evalModules with an empty configuration
 { pkgs }:
 
 builtins.toJSON (

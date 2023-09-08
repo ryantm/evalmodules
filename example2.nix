@@ -1,3 +1,4 @@
+# Simple language server configuration
 { pkgs }:
 
 builtins.toJSON (

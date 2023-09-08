@@ -1,4 +1,4 @@
-# This example shows how configured values can be overriden
+# How configured values can be overriden
 { pkgs }:
 
 builtins.toJSON (

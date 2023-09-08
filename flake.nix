@@ -35,6 +35,7 @@
             ${pkgs.docker}/bin/docker run $(${pkgs.docker}/bin/docker load -q < ${docker4} | cut -d' ' -f3)
           '';
           example5 = ex ./example5.nix;
+          example6 = ex ./example6.nix;
         });
     };
 }

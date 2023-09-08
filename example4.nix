@@ -1,3 +1,4 @@
+# Actually using multiple language servers: go and rust
 { pkgs }:
 
 builtins.toJSON (

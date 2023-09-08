@@ -1,3 +1,4 @@
+# Using a language server submodule to enable multiple language servers
 { pkgs }:
 
 builtins.toJSON (
@@ -7,14 +8,14 @@ builtins.toJSON (
 
       (
         { lib, pkgs, ... }: with lib; let
-          languageServerModule = { config, ... }: {
+          languageServerSubmodule = { config, ... }: {
             options.name = mkOption { type = types.str; };
             options.start = mkOption { type = types.str; };
           };
         in
         {
           options.lsp = mkOption {
-            type = types.attrsOf (types.submodule languageServerModule);
+            type = types.attrsOf (types.submodule languageServerSubmodule);
             default = { };
           };
           config.lsp.go = {

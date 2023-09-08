@@ -1,3 +1,4 @@
+# A hello world for evalModules
 { pkgs }:
 
 builtins.toJSON (
