@@ -34,6 +34,7 @@
           docker4-load-and-run = pkgs.writeScriptBin "docker-load-and-run" ''
             ${pkgs.docker}/bin/docker run $(${pkgs.docker}/bin/docker load -q < ${docker4} | cut -d' ' -f3)
           '';
+          example5 = ex ./example5.nix;
         });
     };
 }
