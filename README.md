@@ -97,5 +97,6 @@ Closure:
 If you want to just build the configuration instead of this output, you can use
 
 ```
-nix run github:ryantm/evalmodules#example4.moduleConfig
+nix build github:ryantm/evalmodules#example4.moduleConfig
+cat result
 ```
